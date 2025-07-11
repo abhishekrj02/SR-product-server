@@ -24,7 +24,8 @@ app.post("/scan", async (req, res) => {
             return res.status(404).json({ error: "Product not found in DB" });
         }
 
-        res.json({ product });
+        res.json({ success: true, product });
+
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: "Server error while fetching product" });
